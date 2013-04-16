@@ -1,0 +1,25 @@
+Esprit\CollaborateurBundle\Entity\Collaborateur:
+    type: entity
+    table: null
+    repositoryClass: Esprit\CollaborateurBundle\Entity\CollaborateurRepository
+    fields:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+        prenom:
+            type: string
+            length: 255
+        nom:
+            type: string
+            length: 255
+        email:
+            type: string
+            length: 255
+        telephone:
+            type: string
+            length: '20'
+        date:
+            type: date
+    lifecycleCallbacks: {  }

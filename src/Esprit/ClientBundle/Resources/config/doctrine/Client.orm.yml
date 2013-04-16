@@ -1,0 +1,25 @@
+Esprit\ClientBundle\Entity\Client:
+    type: entity
+    table: null
+    repositoryClass: Esprit\ClientBundle\Entity\ClientRepository
+    fields:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+        prenom:
+            type: string
+            length: 255
+        nom:
+            type: string
+            length: 255
+        email:
+            type: string
+            length: 255
+        telephone:
+            type: string
+            length: '100'
+        date:
+            type: date
+    lifecycleCallbacks: {  }

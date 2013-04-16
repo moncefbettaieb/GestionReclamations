@@ -1,0 +1,31 @@
+{# src/Esprit/AdminBundle/Resources/views/Admin/supprimer.html.twig #}
+ 
+{% extends "EspritCollaborateurBundle::layout.html.twig" %}
+ 
+{% block title %}
+  Supprimer un collaborateur- {{ parent() }}
+{% endblock %}
+ 
+{% block  espritadmin_body %}
+
+  {# On définit un sous-titre commun à toutes les pages du bundle, par exemple #}
+  <h1>Gestion des Collaborateurs</h1>
+ 
+  <hr>
+  <h2>Supprimer un Collaborateur</h2>
+ 
+  <p>
+    Etes-vous certain de vouloir supprimer ce Collaborateur "{{ collaborateur.nom }} {{ collaborateur.prenom }} " ?
+  </p>
+ 
+  {# On met l'id de Collaborateur dans la route de l'action du formulaire #}
+  <form action="{{ path('espritcollaborateur_supprimer', {'id': collaborateur.id}) }}" method="post">
+    <a href="{{ path('espritcollaborateur_voir', {'id': collaborateur.id}) }}" class="btn">
+      <i class="icon-chevron-left"></i>
+      Retour au Collaborateur
+    </a>
+    <input type="submit" value="Supprimer" class="btn btn-danger" />
+    {{ form_rest(form) }}
+  </form>
+ 
+{% endblock %}

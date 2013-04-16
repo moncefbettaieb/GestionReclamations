@@ -1,0 +1,41 @@
+ {# src/esprit/AdminBundle/Resources/views/Admin/voir.html.twig #}
+ 
+{% extends "EspritAdminBundle::layout.html.twig" %}
+ 
+{% block title %}
+  Lecture d'un article - {{ parent() }}
+{% endblock %}
+{% block espritadmin_body %}
+
+  {# On définit un sous-titre commun à toutes les pages du bundle, par exemple #}
+  <h1>Gestion des Collaborateurs</h1>
+ 
+  <hr>
+<h2>
+  {# On vérifie qu'une image soit bien associée à l'article #}
+  {% if collaborateur.image is not null %}
+    <img src="{{ collaborateur.image.url }}" alt="{{ collaborateur.image.alt }}" />
+  {% endif %}
+
+</h2>
+ <div class="well">
+  <h2>{{ collaborateur.nom }} {{ collaborateur.prenom }} </h2>
+  <i>  {#service {{ collaborateur.service }} ,#} ajouter le {{ collaborateur.date|date('d/m/Y') }}</i>
+ </div>
+ 
+  <p>
+    <a href="{{ path('espritcollaborateur_accueil') }}" class="btn">
+      <i class="icon-chevron-left"></i>
+      Retour à la liste
+    </a>
+    <a href="{{ path('espritcollaborateur_modifier', {'id': collaborateur.id}) }}" class="btn">
+      <i class="icon-edit"></i>
+      Modifier Collaborateur
+    </a>
+    <a href="{{ path('espritcollaborateur_supprimer', {'id': collaborateur.id}) }}" class="btn">
+      <i class="icon-trash"></i>
+      Supprimer Collaborateur
+    </a>
+  </p>
+ 
+{% endblock %}

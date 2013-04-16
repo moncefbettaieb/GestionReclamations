@@ -1,0 +1,7 @@
+parameters:
+#    esprit_manger.example.class: Esprit\MangerBundle\Example
+
+services:
+#    esprit_manger.example:
+#        class: %esprit_manger.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

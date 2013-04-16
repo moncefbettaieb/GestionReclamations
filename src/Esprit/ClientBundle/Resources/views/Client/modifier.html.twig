@@ -1,0 +1,28 @@
+ {# src/esprit/AdminBundle/Resources/views/Admin/modifier.html.twig #}
+
+{% extends "EspritClientBundle::layout.html.twig" %}
+ 
+{% block title %}
+  Modifier un Client - {{ parent() }}
+{% endblock %}
+ 
+{% block espritadmin_body %}
+
+  {# On définit un sous-titre commun à toutes les pages du bundle, par exemple #}
+  <h1>Gestion des Clients</h1>
+ 
+  <hr>
+  <h2>Modifier un Client </h2>
+ 
+  {% include "EspritClientBundle:Client:formulaire.html.twig" %}
+ 
+  
+ 
+  <p>
+    <a href="{{ path('espritclient_voir', {'id': client.id}) }}" class="btn">
+      <i class="icon-chevron-left"></i>
+      Retour à la Description de Client
+    </a>
+  </p>
+ 
+{% endblock %}

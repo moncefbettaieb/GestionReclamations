@@ -1,0 +1,31 @@
+{# src/Esprit/AdminBundle/Resources/views/Admin/supprimer.html.twig #}
+ 
+{% extends "EspritClientBundle::layout.html.twig" %}
+ 
+{% block title %}
+  Supprimer un client- {{ parent() }}
+{% endblock %}
+ 
+{% block  espritadmin_body %}
+
+  {# On définit un sous-titre commun à toutes les pages du bundle, par exemple #}
+  <h1>Gestion des Clients</h1>
+ 
+  <hr>
+  <h2>Supprimer un Client</h2>
+ 
+  <p>
+    Etes-vous certain de vouloir supprimer ce Client "{{ client.nom }} {{ client.prenom }} " ?
+  </p>
+ 
+  {# On met l'id de Client dans la route de l'action du formulaire #}
+  <form action="{{ path('espritclient_supprimer', {'id': client.id}) }}" method="post">
+    <a href="{{ path('espritclient_voir', {'id': client.id}) }}" class="btn">
+      <i class="icon-chevron-left"></i>
+      Retour au Client
+    </a>
+    <input type="submit" value="Supprimer" class="btn btn-danger" />
+    {{ form_rest(form) }}
+  </form>
+ 
+{% endblock %}

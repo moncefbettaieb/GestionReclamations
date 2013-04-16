@@ -1,0 +1,24 @@
+# src/Esprit/ClientBundle/Resources/config/routing.yml
+ 
+espritclient_accueil:
+    pattern: /acceuil
+    defaults: { _controller: EspritClientBundle:Client:index }
+espritclient_voir: 
+    pattern: /client/{id}
+    defaults:  { _controller: EspritClientBundle:Client:voir }
+espritclient_ajouter: 
+    pattern: /ajouter
+    defaults:  { _controller: EspritClientBundle:Client:ajouter }  
+espritclient_modifier:
+    pattern: /modifier/{id}
+    defaults:  { _controller: EspritClientBundle:Client:modifier }
+    requirements:
+        id:  \d+        
+espritclient_supprimer:
+    pattern: /supprimer/{id}
+    defaults:  { _controller: EspritClientBundle:Client:supprimer }
+    requirements:
+        id:  \d+ 
+        
+
+

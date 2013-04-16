@@ -1,0 +1,28 @@
+ {# src/esprit/AdminBundle/Resources/views/Admin/modifier.html.twig #}
+
+{% extends "EspritCollaborateurBundle::layout.html.twig" %}
+ 
+{% block title %}
+  Modifier un Collaborateur - {{ parent() }}
+{% endblock %}
+ 
+{% block espritadmin_body %}
+
+  {# On définit un sous-titre commun à toutes les pages du bundle, par exemple #}
+  <h1>Gestion des Collaborateurs</h1>
+ 
+  <hr>
+  <h2>Modifier un Collaborateur </h2>
+ 
+  {% include "EspritCollaborateurBundle:Collaborateur:formulaire.html.twig" %}
+ 
+  
+ 
+  <p>
+    <a href="{{ path('espritcollaborateur_voir', {'id': collaborateur.id}) }}" class="btn">
+      <i class="icon-chevron-left"></i>
+      Retour à la Description de Collaborateur
+    </a>
+  </p>
+ 
+{% endblock %}

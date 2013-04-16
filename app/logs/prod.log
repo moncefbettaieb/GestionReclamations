@@ -1,0 +1,2 @@
+[2013-04-11 10:54:17] request.INFO: Matched route "espritmanager_accueil" (parameters: "_controller": "Esprit\MangerBundle\Controller\MangerController::indexAction", "_route": "espritmanager_accueil") [] []
+[2013-04-11 10:54:17] request.CRITICAL: Symfony\Component\Security\Core\Exception\AuthenticationCredentialsNotFoundException: The security context was not populated with a Token. (uncaught exception) at C:\wamp\www\GestionReclamations\vendor\jms\security-extra-bundle\JMS\SecurityExtraBundle\Security\Authorization\Interception\MethodSecurityInterceptor.php line 82 [] []

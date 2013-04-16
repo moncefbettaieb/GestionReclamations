@@ -1,0 +1,7 @@
+parameters:
+#    esprit_collaborateur.example.class: Esprit\CollaborateurBundle\Example
+
+services:
+#    esprit_collaborateur.example:
+#        class: %esprit_collaborateur.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

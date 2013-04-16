@@ -1,0 +1,31 @@
+{# src/Esprit/AdminBundle/Resources/views/Admin/index.html.twig #}
+ 
+ 
+{% extends "EspritMangerBundle::layout.html.twig" %}
+ 
+{% block title %}
+  Admin - {{ parent() }}
+{% endblock %}
+ 
+{% block espritadmin_body %}
+  {# On définit un sous-titre commun à toutes les pages du bundle, par exemple #}
+  <h1>Gestion des Managers</h1>
+ 
+  <hr>
+ 
+  <h2>Liste des Managers </h2>
+ 
+  <ul>
+    {% for manager in managers %}
+      <li>
+        <a href="{{ path('espritmanager_voir', {'id': manager.id}) }}">{{ manager.nom }} {{ manager.prenom }}</a>
+        {# service :{{manager.service }},#}
+        le {{ manager.date|date('d/m/Y') }}
+      </li>
+    {% else %}
+      <li>Pas (encore !) de manager</li>
+    {% endfor %}
+
+  </ul>
+ 
+{% endblock %}

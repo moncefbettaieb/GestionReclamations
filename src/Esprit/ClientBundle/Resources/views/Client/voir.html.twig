@@ -1,0 +1,41 @@
+ {# src/esprit/AdminBundle/Resources/views/Admin/voir.html.twig #}
+ 
+{% extends "EspritAdminBundle::layout.html.twig" %}
+ 
+{% block title %}
+  Lecture d'un article - {{ parent() }}
+{% endblock %}
+{% block espritadmin_body %}
+
+  {# On définit un sous-titre commun à toutes les pages du bundle, par exemple #}
+  <h1>Gestion des Clients</h1>
+ 
+  <hr>
+<h2>
+  {# On vérifie qu'une image soit bien associée à l'article #}
+  {% if client.image is not null %}
+    <img src="{{ client.image.url }}" alt="{{ client.image.alt }}" />
+  {% endif %}
+
+</h2>
+ <div class="well">
+  <h2>{{ client.nom }} {{ client.prenom }} </h2>
+  <i>  {#service {{ client.service }} ,#} ajouter le {{ client.date|date('d/m/Y') }}</i>
+ </div>
+ 
+  <p>
+    <a href="{{ path('espritclient_accueil') }}" class="btn">
+      <i class="icon-chevron-left"></i>
+      Retour à la liste
+    </a>
+    <a href="{{ path('espritclient_modifier', {'id': client.id}) }}" class="btn">
+      <i class="icon-edit"></i>
+      Modifier Client
+    </a>
+    <a href="{{ path('espritclient_supprimer', {'id': client.id}) }}" class="btn">
+      <i class="icon-trash"></i>
+      Supprimer Client
+    </a>
+  </p>
+ 
+{% endblock %}

@@ -1,0 +1,28 @@
+ {# src/esprit/AdminBundle/Resources/views/Admin/modifier.html.twig #}
+
+{% extends "EspritMangerBundle::layout.html.twig" %}
+ 
+{% block title %}
+  Modifier un Manager - {{ parent() }}
+{% endblock %}
+ 
+{% block espritadmin_body %}
+
+  {# On définit un sous-titre commun à toutes les pages du bundle, par exemple #}
+  <h1>Gestion des Managers</h1>
+ 
+  <hr>
+  <h2>Modifier un Manager </h2>
+ 
+  {% include "EspritMangerBundle:Manger:formulaire.html.twig" %}
+ 
+  
+ 
+  <p>
+    <a href="{{ path('espritmanager_voir', {'id': manager.id}) }}" class="btn">
+      <i class="icon-chevron-left"></i>
+      Retour à la Description de Manager
+    </a>
+  </p>
+ 
+{% endblock %}

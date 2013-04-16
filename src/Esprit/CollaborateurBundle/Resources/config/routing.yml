@@ -1,0 +1,23 @@
+# src/Esprit/CollaborateurBundle/Resources/config/routing.yml
+ 
+espritcollaborateur_accueil:
+    pattern: /acceuil
+    defaults: { _controller: EspritCollaborateurBundle:Collaborateur:index }
+espritcollaborateur_voir: 
+    pattern: /collaborateur/{id}
+    defaults:  { _controller: EspritCollaborateurBundle:Collaborateur:voir }
+espritcollaborateur_ajouter: 
+    pattern: /ajouter
+    defaults:  { _controller: EspritCollaborateurBundle:Collaborateur:ajouter }  
+espritcollaborateur_modifier:
+    pattern: /modifier/{id}
+    defaults:  { _controller: EspritCollaborateurBundle:Collaborateur:modifier }
+    requirements:
+        id:  \d+        
+espritcollaborateur_supprimer:
+    pattern: /supprimer/{id}
+    defaults:  { _controller: EspritCollaborateurBundle:Collaborateur:supprimer }
+    requirements:
+        id:  \d+ 
+        
+

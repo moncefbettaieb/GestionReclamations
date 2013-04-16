@@ -1,0 +1,4 @@
+
+espritadmin_accueil:
+    pattern: /acceuil
+    defaults: { _controller: EspritMangerBundle:Manger:index }
